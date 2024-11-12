@@ -1,6 +1,6 @@
 # Lucas V. Sobral 👨‍💻
 
-### aka Szefito | LucasSobralOfc ⚡️ Red Bull and DuinoCoin Enthusiast
+### aka Szefito | lucassobralofc ⚡️ Red Bull and DuinoCoin Enthusiast
 
 Hey there! I'm Lucas, also known as Szefito or lucassobralofc. I'm an electronics and automation enthusiast with a soft spot for Apple tech and a can of Red Bull always by my side. I’m currently a high school student in Brazil, driven by curiosity and a passion for exploring new technologies. I mainly work in home automation and enjoy contributing to projects in the DuinoCoin community.
 

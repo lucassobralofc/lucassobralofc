@@ -17,7 +17,7 @@ Hey there! I'm Lucas, also known as Szefito or lucassobralofc. I'm an electronic
 
 ### 💡 Projects
 
-- **ElaptaCoin** - My own cryptocurrency project
+- **ElaptaCoin** -  one of co-owners
 - **Szefito Bot** - A Discord bot with custom commands and various functions
 
 ---

@@ -32,7 +32,7 @@ My journey started young—at 8 years old—taking apart electronics to learn ho
 
 Stay connected with me on social media:
 
-[Twitter](https://twitter.com/lucassobralofc) | [Instagram](https://www.instagram.com/lucassobralofc) 
+[Twitter](https://twitter.com/takszefito) | [Instagram](https://www.instagram.com/lucassobralofc) 
 
 ---
 

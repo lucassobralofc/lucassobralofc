@@ -3,99 +3,200 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lucas V. Sobral - GitHub Space</title>
+  <title>Lucas V. Sobral | Tech Enthusiast</title>
   <style>
+    :root {
+      --primary: #00c8ff;
+      --secondary: #2b2b45;
+      --background: #1e1e2f;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', system-ui, sans-serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #1e1e2f, #2b2b45);
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--background), var(--secondary));
       color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       min-height: 100vh;
+      line-height: 1.6;
     }
 
     .container {
       max-width: 800px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 2.5rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 0.8s ease-out;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .profile-header {
       text-align: center;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      margin-bottom: 2.5rem;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #00c8ff;
+      font-size: 2.8rem;
+      margin: 0.5rem 0;
+      color: var(--primary);
+      text-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
     }
 
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
+    .tagline {
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
 
-    a {
-      color: #00c8ff;
-      text-decoration: none;
+    .section {
+      margin: 2.5rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: transform 0.3s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .section:hover {
+      transform: translateY(-5px);
     }
 
-    .skills, .projects, .contact {
-      margin: 20px 0;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-item {
+      padding: 0.8rem;
+      background: rgba(0, 200, 255, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .project-card {
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      border-left: 4px solid var(--primary);
     }
 
     .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #00c8ff;
-      color: #1e1e2f;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary);
+      color: var(--background);
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
     }
 
     .button:hover {
-      background: #007b9e;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      position: relative;
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Lucas V. Sobral</h1>
-    <p><em>aka Szefito | LucasSobralOfc</em></p>
-    <p>Welcome to my GitHub Space! I'm a high school student from Brazil, passionate about electronics, automation, and exploring new technologies.</p>
+    <header class="profile-header">
+      <h1>Lucas V. Sobral</h1>
+      <p class="tagline">⚡ Electronics & Automation Explorer | 🍏 Apple Ecosystem Expert</p>
+    </header>
 
-    <div class="skills">
-      <h2>🚀 Technical Skills</h2>
-      <p>Python | Apple Expert | Home Automation | Electronics</p>
-    </div>
+    <section class="section">
+      <h2>🛠 Technical Arsenal</h2>
+      <div class="skills-grid">
+        <div class="skill-item">Python</div>
+        <div class="skill-item">Home Automation</div>
+        <div class="skill-item">IoT Systems</div>
+        <div class="skill-item">Electronics</div>
+        <div class="skill-item">Duino-Coin</div>
+        <div class="skill-item">Smart Home</div>
+      </div>
+    </section>
 
-    <div class="projects">
-      <h2>💡 Featured Projects</h2>
-      <p>
-        🔗 <a href="https://github.com/your-elaptacoin-repo">ElaptaCoin</a><br>
-        🤖 <a href="https://github.com/your-szefito-bot-repo">Szefito Bot</a>
-      </p>
-    </div>
+    <section class="section">
+      <h2>🚀 Featured Projects</h2>
+      <div class="project-card">
+        <h3>Duino-Coin Collaborator</h3>
+        <p>Contributing to the world's most accessible cryptocurrency ecosystem</p>
+        <a href="https://github.com/revoxhere/duinocoin" class="button">
+          <span>View Project</span>
+        </a>
+      </div>
 
-    <div class="contact">
-      <h2>📲 Stay Connected</h2>
-      <p>
-        <a href="https://twitter.com/takszefito">Twitter</a> | 
-        <a href="https://instagram.com/lucassobralofc">Instagram</a> | 
-        <a href="https://linkedin.com/in/lucassobralofc">LinkedIn</a>
-      </p>
-    </div>
+      <div class="project-card">
+        <h3>Szefito Bot</h3>
+        <p>Custom automation bot for smart device management</p>
+        <a href="https://github.com/lucassobralofc/szefito-bot" class="button">
+          <span>Explore Code</span>
+        </a>
+      </div>
+    </section>
 
-    <a class="button" href="https://github.com/lucassobral">Explore My Repositories</a>
+    <section class="section">
+      <h2>🌐 Connect With Me</h2>
+      <div class="social-links">
+        <a href="https://twitter.com/takszefito" target="_blank">Twitter</a>
+        <a href="https://instagram.com/lucassobralofc" target="_blank">Instagram</a>
+        <a href="https://music.apple.com/profile/lucassobralofc" target="_blank">Apple Music</a>
+      </div>
+    </section>
+
+    <a href="https://github.com/lucassobralofc" class="button" style="width: 100%; justify-content: center; margin-top: 2rem;">
+      Explore My GitHub Universe
+    </a>
   </div>
 </body>
 </html>

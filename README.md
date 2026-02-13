@@ -51,7 +51,7 @@ Some things I'm working on:
 
 ## 📫 Let's Connect
 
-- 💼 Portfolio: [Visit my website](https://lucassobralofc.github.io/lucassobralofc/)
+- 💼 Portfolio: [Visit my website](https://lucassobral.tech)
 - 📧 Email: Feel free to reach out!
 - 🐙 GitHub: You're already here!
 

@@ -18,14 +18,66 @@ navLinks.forEach(link => {
     });
 });
 
-// Add scroll effect to navbar
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+// Throttle function for performance
+function throttle(func, delay) {
+    let lastCall = 0;
+    return function(...args) {
+        const now = new Date().getTime();
+        if (now - lastCall < delay) {
+            return;
+        }
+        lastCall = now;
+        return func(...args);
+    };
+}
+
+// Get sections for scroll handling (declare early)
+const sections = document.querySelectorAll('section');
+
+// Consolidated scroll handler for better performance
+const handleScroll = throttle(() => {
+    const scrollY = window.scrollY;
+    
+    // Add scroll effect to navbar
+    if (scrollY > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-});
+    
+    // Active nav link highlight based on scroll position
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Add parallax effect to hero section
+    const heroContent = document.querySelector('.hero-content');
+    const floatingCards = document.querySelectorAll('.floating-card');
+    
+    if (heroContent && scrollY < 1000) {
+        heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
+    }
+    
+    floatingCards.forEach((card, index) => {
+        if (scrollY < 1000) {
+            const speed = 0.2 + (index * 0.1);
+            card.style.transform = `translateY(${scrollY * speed}px)`;
+        }
+    });
+}, 16); // ~60fps
+
+window.addEventListener('scroll', handleScroll);
 
 // Smooth scroll with offset for fixed navbar
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -58,7 +110,6 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all sections for fade-in effect
-const sections = document.querySelectorAll('section');
 sections.forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(30px)';
@@ -84,41 +135,6 @@ projectCards.forEach((card, index) => {
     observer.observe(card);
 });
 
-// Active nav link highlight based on scroll position
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Add parallax effect to hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const heroContent = document.querySelector('.hero-content');
-    const floatingCards = document.querySelectorAll('.floating-card');
-    
-    if (heroContent) {
-        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
-    
-    floatingCards.forEach((card, index) => {
-        const speed = 0.2 + (index * 0.1);
-        card.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
 // Add typing effect to hero title (optional enhancement)
 const heroTitle = document.querySelector('.hero-title');
 if (heroTitle) {
@@ -131,7 +147,8 @@ if (heroTitle) {
     
     function typeWriter() {
         if (index < text.length) {
-            heroTitle.innerHTML += text.charAt(index);
+            // Use textContent to prevent XSS issues
+            heroTitle.textContent += text.charAt(index);
             index++;
             setTimeout(typeWriter, typeSpeed);
         }

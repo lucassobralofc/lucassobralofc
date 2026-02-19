@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +14,13 @@
         <div class="container nav-container">
             <a href="#" class="logo">LS</a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <button class="lang-toggle" id="langToggle" aria-label="Toggle language">PT</button>
             <button class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -35,15 +36,15 @@
                 <h1 class="hero-title">
                     Hi, I'm <span class="gradient-text">Lucas Sobral</span>
                 </h1>
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
                     High school student | Technology enthusiast | Backend developer
                 </p>
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.description">
                     Building cool projects with hardware, automation, and code 🚀
                 </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.getInTouch">Get in Touch</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -63,15 +64,15 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
+                    <p data-i18n="about.p1">
                         I'm a Brazilian high school student with a passion for technology and building things. 
                         I love exploring the intersection of hardware and software—from electronics and automation 
                         to Linux servers and APIs.
                     </p>
-                    <p>
+                    <p data-i18n="about.p2">
                         Whether it's tinkering with microcontrollers, setting up automation bots, or building backend 
                         systems, I'm always excited to learn and create something new. I believe in clean design, 
                         minimal UI, and functional projects.
@@ -79,19 +80,19 @@
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <span class="highlight-icon">🔧</span>
-                            <span>Electronics & DIY</span>
+                            <span data-i18n="about.electronics">Electronics & DIY</span>
                         </div>
                         <div class="highlight-item">
                             <span class="highlight-icon">🤖</span>
-                            <span>Automation & Bots</span>
+                            <span data-i18n="about.automation">Automation & Bots</span>
                         </div>
                         <div class="highlight-item">
                             <span class="highlight-icon">🐧</span>
-                            <span>Linux & Servers</span>
+                            <span data-i18n="about.linux">Linux & Servers</span>
                         </div>
                         <div class="highlight-item">
                             <span class="highlight-icon">🚀</span>
-                            <span>Backend Dev</span>
+                            <span data-i18n="about.backend">Backend Dev</span>
                         </div>
                     </div>
                 </div>
@@ -102,12 +103,12 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills & Tech Stack</h2>
+            <h2 class="section-title" data-i18n="skills.title">Skills & Tech Stack</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <div class="skill-icon">💻</div>
-                    <h3>Backend Development</h3>
-                    <p>Python, Node.js, APIs, REST, databases</p>
+                    <h3 data-i18n="skills.backend.title">Backend Development</h3>
+                    <p data-i18n="skills.backend.desc">Python, Node.js, APIs, REST, databases</p>
                     <div class="skill-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Node.js</span>
@@ -116,8 +117,8 @@
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🔌</div>
-                    <h3>Hardware & Electronics</h3>
-                    <p>Arduino, ESP32, Raspberry Pi, sensors</p>
+                    <h3 data-i18n="skills.hardware.title">Hardware & Electronics</h3>
+                    <p data-i18n="skills.hardware.desc">Arduino, ESP32, Raspberry Pi, sensors</p>
                     <div class="skill-tags">
                         <span class="tag">Arduino</span>
                         <span class="tag">ESP32</span>
@@ -126,8 +127,8 @@
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🐧</div>
-                    <h3>Linux & Servers</h3>
-                    <p>Server management, Bash scripting, DevOps</p>
+                    <h3 data-i18n="skills.linux.title">Linux & Servers</h3>
+                    <p data-i18n="skills.linux.desc">Server management, Bash scripting, DevOps</p>
                     <div class="skill-tags">
                         <span class="tag">Linux</span>
                         <span class="tag">Bash</span>
@@ -136,8 +137,8 @@
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🤖</div>
-                    <h3>Automation</h3>
-                    <p>Bots, task automation, scripting</p>
+                    <h3 data-i18n="skills.automation.title">Automation</h3>
+                    <p data-i18n="skills.automation.desc">Bots, task automation, scripting</p>
                     <div class="skill-tags">
                         <span class="tag">Scripting</span>
                         <span class="tag">Bots</span>
@@ -151,15 +152,15 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Some things I'm building and experimenting with</p>
+            <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">Some things I'm building and experimenting with</p>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
                         <span class="project-icon">🤖</span>
-                        <h3>Automation Bots</h3>
+                        <h3 data-i18n="projects.bots.title">Automation Bots</h3>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.bots.desc">
                         Building various automation bots for productivity and task management using Python and APIs.
                     </p>
                     <div class="project-tags">
@@ -168,15 +169,15 @@
                         <span class="tag">Automation</span>
                     </div>
                     <div class="project-status">
-                        <span class="status-badge in-progress">In Progress</span>
+                        <span class="status-badge in-progress" data-i18n="status.inProgress">In Progress</span>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-header">
                         <span class="project-icon">🔌</span>
-                        <h3>IoT Projects</h3>
+                        <h3 data-i18n="projects.iot.title">IoT Projects</h3>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.iot.desc">
                         Experimenting with microcontrollers, sensors, and DIY electronics for home automation.
                     </p>
                     <div class="project-tags">
@@ -185,15 +186,15 @@
                         <span class="tag">IoT</span>
                     </div>
                     <div class="project-status">
-                        <span class="status-badge in-progress">In Progress</span>
+                        <span class="status-badge in-progress" data-i18n="status.inProgress">In Progress</span>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-header">
                         <span class="project-icon">🌐</span>
-                        <h3>Backend Services</h3>
+                        <h3 data-i18n="projects.services.title">Backend Services</h3>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.services.desc">
                         Creating backend services and API integrations for various applications.
                     </p>
                     <div class="project-tags">
@@ -202,15 +203,15 @@
                         <span class="tag">Backend</span>
                     </div>
                     <div class="project-status">
-                        <span class="status-badge in-progress">In Progress</span>
+                        <span class="status-badge in-progress" data-i18n="status.inProgress">In Progress</span>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-header">
                         <span class="project-icon">🏠</span>
-                        <h3>Home Automation</h3>
+                        <h3 data-i18n="projects.home.title">Home Automation</h3>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.home.desc">
                         Building smart home solutions with Raspberry Pi and custom automation scripts.
                     </p>
                     <div class="project-tags">
@@ -219,7 +220,7 @@
                         <span class="tag">Home Lab</span>
                     </div>
                     <div class="project-status">
-                        <span class="status-badge planned">Planned</span>
+                        <span class="status-badge planned" data-i18n="status.planned">Planned</span>
                     </div>
                 </div>
             </div>
@@ -229,8 +230,8 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">Feel free to reach out for collaborations or just a chat!</p>
+            <h2 class="section-title" data-i18n="contact.title">Let's Connect</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">Feel free to reach out for collaborations or just a chat!</p>
             <div class="contact-content">
                 <div class="contact-links">
                     <a href="https://github.com/lucassobralofc" target="_blank" class="contact-link">
@@ -260,7 +261,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Lucas Sobral. Built with ☕ and curiosity.</p>
+            <p data-i18n="footer.text">&copy; 2026 Lucas Sobral. Built with ☕ and curiosity.</p>
         </div>
     </footer>
 

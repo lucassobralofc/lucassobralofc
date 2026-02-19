@@ -1,3 +1,126 @@
+// ===========================
+// Translations & i18n
+// ===========================
+const translations = {
+    en: {
+        'nav.home': 'Home',
+        'nav.about': 'About',
+        'nav.skills': 'Skills',
+        'nav.projects': 'Projects',
+        'nav.contact': 'Contact',
+        'hero.title': 'Hi, I\'m <span class="gradient-text">Lucas Sobral</span>',
+        'hero.subtitle': 'High school student | Technology enthusiast | Backend developer',
+        'hero.description': 'Building cool projects with hardware, automation, and code 🚀',
+        'hero.viewProjects': 'View Projects',
+        'hero.getInTouch': 'Get in Touch',
+        'about.title': 'About Me',
+        'about.p1': 'I\'m a Brazilian high school student with a passion for technology and building things. I love exploring the intersection of hardware and software—from electronics and automation to Linux servers and APIs.',
+        'about.p2': 'Whether it\'s tinkering with microcontrollers, setting up automation bots, or building backend systems, I\'m always excited to learn and create something new. I believe in clean design, minimal UI, and functional projects.',
+        'about.electronics': 'Electronics & DIY',
+        'about.automation': 'Automation & Bots',
+        'about.linux': 'Linux & Servers',
+        'about.backend': 'Backend Dev',
+        'skills.title': 'Skills & Tech Stack',
+        'skills.backend.title': 'Backend Development',
+        'skills.backend.desc': 'Python, Node.js, APIs, REST, databases',
+        'skills.hardware.title': 'Hardware & Electronics',
+        'skills.hardware.desc': 'Arduino, ESP32, Raspberry Pi, sensors',
+        'skills.linux.title': 'Linux & Servers',
+        'skills.linux.desc': 'Server management, Bash scripting, DevOps',
+        'skills.automation.title': 'Automation',
+        'skills.automation.desc': 'Bots, task automation, scripting',
+        'projects.title': 'Projects',
+        'projects.subtitle': 'Some things I\'m building and experimenting with',
+        'projects.bots.title': 'Automation Bots',
+        'projects.bots.desc': 'Building various automation bots for productivity and task management using Python and APIs.',
+        'projects.iot.title': 'IoT Projects',
+        'projects.iot.desc': 'Experimenting with microcontrollers, sensors, and DIY electronics for home automation.',
+        'projects.services.title': 'Backend Services',
+        'projects.services.desc': 'Creating backend services and API integrations for various applications.',
+        'projects.home.title': 'Home Automation',
+        'projects.home.desc': 'Building smart home solutions with Raspberry Pi and custom automation scripts.',
+        'status.inProgress': 'In Progress',
+        'status.planned': 'Planned',
+        'contact.title': 'Let\'s Connect',
+        'contact.subtitle': 'Feel free to reach out for collaborations or just a chat!',
+        'footer.text': '© 2026 Lucas Sobral. Built with ☕ and curiosity.',
+        'lang.toggle': 'PT',
+    },
+    pt: {
+        'nav.home': 'Início',
+        'nav.about': 'Sobre',
+        'nav.skills': 'Habilidades',
+        'nav.projects': 'Projetos',
+        'nav.contact': 'Contato',
+        'hero.title': 'Olá, eu sou <span class="gradient-text">Lucas Sobral</span>',
+        'hero.subtitle': 'Estudante do ensino médio | Entusiasta de tecnologia | Desenvolvedor backend',
+        'hero.description': 'Construindo projetos incríveis com hardware, automação e código 🚀',
+        'hero.viewProjects': 'Ver Projetos',
+        'hero.getInTouch': 'Entrar em Contato',
+        'about.title': 'Sobre Mim',
+        'about.p1': 'Sou um estudante brasileiro do ensino médio apaixonado por tecnologia e por construir coisas. Adoro explorar a interseção entre hardware e software — de eletrônica e automação a servidores Linux e APIs.',
+        'about.p2': 'Seja trabalhando com microcontroladores, configurando bots de automação ou construindo sistemas backend, estou sempre animado para aprender e criar algo novo. Acredito em design limpo, UI minimalista e projetos funcionais.',
+        'about.electronics': 'Eletrônica & DIY',
+        'about.automation': 'Automação & Bots',
+        'about.linux': 'Linux & Servidores',
+        'about.backend': 'Dev Backend',
+        'skills.title': 'Habilidades & Stack',
+        'skills.backend.title': 'Desenvolvimento Backend',
+        'skills.backend.desc': 'Python, Node.js, APIs, REST, banco de dados',
+        'skills.hardware.title': 'Hardware & Eletrônica',
+        'skills.hardware.desc': 'Arduino, ESP32, Raspberry Pi, sensores',
+        'skills.linux.title': 'Linux & Servidores',
+        'skills.linux.desc': 'Gerenciamento de servidores, scripts Bash, DevOps',
+        'skills.automation.title': 'Automação',
+        'skills.automation.desc': 'Bots, automação de tarefas, scripts',
+        'projects.title': 'Projetos',
+        'projects.subtitle': 'Algumas coisas que estou construindo e experimentando',
+        'projects.bots.title': 'Bots de Automação',
+        'projects.bots.desc': 'Desenvolvendo vários bots de automação para produtividade e gerenciamento de tarefas usando Python e APIs.',
+        'projects.iot.title': 'Projetos IoT',
+        'projects.iot.desc': 'Experimentando com microcontroladores, sensores e eletrônica DIY para automação residencial.',
+        'projects.services.title': 'Serviços Backend',
+        'projects.services.desc': 'Criando serviços backend e integrações de API para diversas aplicações.',
+        'projects.home.title': 'Automação Residencial',
+        'projects.home.desc': 'Construindo soluções de casa inteligente com Raspberry Pi e scripts de automação personalizados.',
+        'status.inProgress': 'Em Progresso',
+        'status.planned': 'Planejado',
+        'contact.title': 'Vamos Conectar',
+        'contact.subtitle': 'Fique à vontade para entrar em contato para colaborações ou apenas uma conversa!',
+        'footer.text': '© 2026 Lucas Sobral. Feito com ☕ e curiosidade.',
+        'lang.toggle': 'EN',
+    }
+};
+
+function detectLanguage() {
+    const stored = localStorage.getItem('lang');
+    if (stored === 'en' || stored === 'pt') return stored;
+    const lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    return lang.startsWith('pt') ? 'pt' : 'en';
+}
+
+function applyTranslations(lang) {
+    const t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = t[el.dataset.i18n];
+    });
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        heroTitle.innerHTML = t['hero.title'];
+    }
+    const htmlRoot = document.getElementById('htmlRoot');
+    if (htmlRoot) {
+        htmlRoot.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    }
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.textContent = t['lang.toggle'];
+    }
+}
+
+let currentLang = detectLanguage();
+applyTranslations(currentLang);
+
 // Navigation functionality
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
@@ -16,6 +139,13 @@ navLinks.forEach(link => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     });
+});
+
+// Language toggle
+document.getElementById('langToggle').addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'pt' : 'en';
+    localStorage.setItem('lang', currentLang);
+    applyTranslations(currentLang);
 });
 
 // Throttle function for performance

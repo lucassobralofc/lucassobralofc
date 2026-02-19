@@ -1,7 +1,7 @@
 # Hey there! 👋 I'm Lucas Sobral
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=00D9FF&center=true&vCenter=true&width=435&lines=High+School+Student+%F0%9F%93%9A;Technology+Enthusiast+%F0%9F%92%BB;Backend+Developer+%F0%9F%9A%80;Hardware+Tinkerer+%F0%9F%94%A7" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=00D9FF&center=true&vCenter=true&width=435&lines=Szefito+%F0%9F%93%9A;Technology+Enthusiast+%F0%9F%92%BB;Backend+Developer+%F0%9F%9A%80;Hardware+Tinkerer+%F0%9F%94%A7" alt="Typing SVG" />
 </div>
 
 ## 🚀 About Me

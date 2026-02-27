@@ -122,6 +122,24 @@ body {
     width: 100%;
 }
 
+.lang-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-primary);
+}
+
+.lang-toggle:hover {
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
